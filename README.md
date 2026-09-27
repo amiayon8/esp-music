@@ -180,5 +180,53 @@ idf.py build
 ```bash
 idf.py -p COM_PORT flash monitor
 ```
-#   e s p - m u s i c  
- 
+
+---
+
+## Music Library Synchronization
+
+A Python utility is provided in `sync_playlists.py` to synchronize YouTube Music playlists into organized folders directly on your MicroSD card or local directory:
+
+```text
+Selected Folder/
+├── Playlist Name/
+│   ├── Track Name.flac
+│   ├── cover.jpg
+│   └── .download_archive.txt
+```
+
+### Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+### Usage
+
+1. Open `sync_playlists.py` and add your playlist names and YouTube Music links directly to the `PLAYLISTS` dictionary:
+
+```python
+PLAYLISTS: Dict[str, str] = {
+    "Favourite Songs": "https://music.youtube.com/playlist?list=...",
+    "DJ": "https://music.youtube.com/playlist?list=...",
+}
+```
+
+2. Run the script:
+
+```bash
+python sync_playlists.py
+```
+
+To specify a custom output directory (e.g. your MicroSD card mounted on drive `E:`):
+
+```bash
+python sync_playlists.py --output E:/Music
+```
+
+### Features
+
+- **Folder Hierarchy**: Generates `<Selected Folder>/<Playlist Name>/<Track Name>.<ext>` matching the ESP32 player library scanner.
+- **Audio Quality**: Extracts the best available audio stream losslessly to FLAC (`--format flac`, default) without compression loss, or copies raw streams (`--format best`).
+- **Metadata and Artwork**: Embeds artist, album, title, and track number tags, embeds cover art into each file, and exports `cover.jpg` for folder-level preview on the 2.9-inch E-Paper screen.
+- **Incremental Sync**: Maintains `.download_archive.txt` in each folder so existing tracks are skipped on future runs.
