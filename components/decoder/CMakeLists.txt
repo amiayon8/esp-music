@@ -1,0 +1,15 @@
+idf_component_register(
+    SRCS
+        "src/audio_decoder.cpp"
+        "src/flac_decoder.cpp"
+        "src/mp3_decoder.cpp"
+        "src/aac_decoder.cpp"
+        "src/opus_decoder.cpp"
+        "src/wav_decoder.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        metadata
+        storage
+        freertos
+)

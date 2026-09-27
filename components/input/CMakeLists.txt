@@ -1,0 +1,14 @@
+idf_component_register(
+    SRCS
+        "src/input_manager.cpp"
+        "src/button_handler.cpp"
+        "src/rotary_encoder.cpp"
+        "src/volume_potentiometer.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        driver
+        esp_adc
+        esp_timer
+        freertos
+)

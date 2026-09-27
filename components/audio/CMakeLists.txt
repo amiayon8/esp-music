@@ -1,0 +1,13 @@
+idf_component_register(
+    SRCS
+        "src/audio_pipeline.cpp"
+        "src/audio_buffer.cpp"
+        "src/volume_scaler.cpp"
+        "src/audio_resampler.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        decoder
+        freertos
+        esp_timer
+)

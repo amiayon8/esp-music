@@ -1,0 +1,22 @@
+idf_component_register(
+    SRCS
+        "main.cpp"
+        "app_state.cpp"
+    INCLUDE_DIRS
+        "."
+    REQUIRES
+        display
+        input
+        storage
+        metadata
+        library
+        decoder
+        audio
+        bluetooth
+        playback
+        power
+        ui
+        esp_timer
+        freertos
+        nvs_flash
+)

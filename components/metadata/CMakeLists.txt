@@ -1,0 +1,13 @@
+idf_component_register(
+    SRCS
+        "src/metadata_extractor.cpp"
+        "src/id3_parser.cpp"
+        "src/vorbis_parser.cpp"
+        "src/mp4_parser.cpp"
+        "src/artwork_extractor.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        storage
+        display
+)

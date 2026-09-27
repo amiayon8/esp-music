@@ -1,0 +1,14 @@
+idf_component_register(
+    SRCS
+        "src/epaper_driver.cpp"
+        "src/epaper_canvas.cpp"
+        "src/font_engine.cpp"
+        "src/bitmap_renderer.cpp"
+        "src/ui_icons.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        driver
+        esp_timer
+        freertos
+)

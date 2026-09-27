@@ -1,0 +1,14 @@
+idf_component_register(
+    SRCS
+        "src/playback_controller.cpp"
+        "src/playback_queue.cpp"
+        "src/resume_manager.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        audio
+        library
+        metadata
+        nvs_flash
+        freertos
+)

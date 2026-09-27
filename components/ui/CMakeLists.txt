@@ -1,0 +1,22 @@
+idf_component_register(
+    SRCS
+        "src/ui_manager.cpp"
+        "src/screen_base.cpp"
+        "src/now_playing_screen.cpp"
+        "src/library_screen.cpp"
+        "src/song_list_screen.cpp"
+        "src/bluetooth_screen.cpp"
+        "src/error_screen.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        display
+        input
+        audio
+        playback
+        bluetooth
+        power
+        storage
+        library
+        freertos
+)

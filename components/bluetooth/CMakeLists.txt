@@ -1,0 +1,11 @@
+idf_component_register(
+    SRCS
+        "src/bluetooth_manager.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        bt
+        nvs_flash
+        freertos
+        audio
+)

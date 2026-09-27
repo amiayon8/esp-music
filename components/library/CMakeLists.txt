@@ -1,0 +1,12 @@
+idf_component_register(
+    SRCS
+        "src/music_library.cpp"
+        "src/library_index.cpp"
+        "src/playlist_manager.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        storage
+        metadata
+        freertos
+)
